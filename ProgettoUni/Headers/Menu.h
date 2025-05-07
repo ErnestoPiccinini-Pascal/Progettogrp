@@ -5,7 +5,7 @@ void stampamenu(){
 
 
     cout<<"***GESTIONE UNIVERSITARIA***"<<endl;
-    cout<<"8. Carica dati da file"<<endl;
+    cout<<"0. Carica dati da file"<<endl;
     cout<<"1. Cerca corsi di uno studente (matricola)"<<endl;
     cout<<"2. Cerca corsi di uno studente (cognome)"<<endl;
     cout<<"3. Elenca studenti iscritti ad un corso"<<endl;

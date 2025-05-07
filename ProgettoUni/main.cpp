@@ -10,6 +10,7 @@ int main()
     switch(scelta){
         case '0':
             cout<<"chzh";
+            break;
         case '1':
         //
         case '2':
