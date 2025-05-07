@@ -1,9 +1,12 @@
 #include <iostream>
 #include "Headers/Menu.h"
+#include "Headers/Struct.h"
 using namespace std;
+
 
 int main()
 {
+
     stampamenu();
     char scelta;
     cin>>scelta;
