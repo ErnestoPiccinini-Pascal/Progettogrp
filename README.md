@@ -1,2 +1,2 @@
 # Progettogrp
-Progetto di gruppo Piccinini-Canelli
+Progetto di gruppo Piccinini-Canelli-Esposti
