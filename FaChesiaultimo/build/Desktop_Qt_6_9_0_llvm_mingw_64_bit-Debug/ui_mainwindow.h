@@ -26,7 +26,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QListWidget *listWidget;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *Carica;
     QPushButton *CorsixMat;
@@ -51,64 +51,64 @@ public:
         centralwidget->setObjectName("centralwidget");
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName("listWidget");
-        listWidget->setGeometry(QRect(50, 20, 541, 391));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(610, 21, 147, 326));
-        verticalLayout = new QVBoxLayout(widget);
+        listWidget->setGeometry(QRect(50, 20, 541, 471));
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(610, 21, 147, 326));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        Carica = new QPushButton(widget);
+        Carica = new QPushButton(layoutWidget);
         Carica->setObjectName("Carica");
 
         verticalLayout->addWidget(Carica);
 
-        CorsixMat = new QPushButton(widget);
+        CorsixMat = new QPushButton(layoutWidget);
         CorsixMat->setObjectName("CorsixMat");
 
         verticalLayout->addWidget(CorsixMat);
 
-        CorsixCog = new QPushButton(widget);
+        CorsixCog = new QPushButton(layoutWidget);
         CorsixCog->setObjectName("CorsixCog");
 
         verticalLayout->addWidget(CorsixCog);
 
-        studentiacorso = new QPushButton(widget);
+        studentiacorso = new QPushButton(layoutWidget);
         studentiacorso->setObjectName("studentiacorso");
 
         verticalLayout->addWidget(studentiacorso);
 
-        excorso = new QPushButton(widget);
+        excorso = new QPushButton(layoutWidget);
         excorso->setObjectName("excorso");
 
         verticalLayout->addWidget(excorso);
 
-        Nstudcorso = new QPushButton(widget);
+        Nstudcorso = new QPushButton(layoutWidget);
         Nstudcorso->setObjectName("Nstudcorso");
 
         verticalLayout->addWidget(Nstudcorso);
 
-        Nmatcorso = new QPushButton(widget);
+        Nmatcorso = new QPushButton(layoutWidget);
         Nmatcorso->setObjectName("Nmatcorso");
 
         verticalLayout->addWidget(Nmatcorso);
 
-        Matxdesc = new QPushButton(widget);
+        Matxdesc = new QPushButton(layoutWidget);
         Matxdesc->setObjectName("Matxdesc");
 
         verticalLayout->addWidget(Matxdesc);
 
-        newstu = new QPushButton(widget);
+        newstu = new QPushButton(layoutWidget);
         newstu->setObjectName("newstu");
 
         verticalLayout->addWidget(newstu);
 
-        Salvadat = new QPushButton(widget);
+        Salvadat = new QPushButton(layoutWidget);
         Salvadat->setObjectName("Salvadat");
 
         verticalLayout->addWidget(Salvadat);
 
-        esci = new QPushButton(widget);
+        esci = new QPushButton(layoutWidget);
         esci->setObjectName("esci");
 
         verticalLayout->addWidget(esci);
@@ -116,7 +116,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

@@ -18,6 +18,9 @@ public:
     ~MainWindow();
 
 
+private slots:
+    void on_Carica_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
