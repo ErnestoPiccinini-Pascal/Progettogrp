@@ -20,7 +20,7 @@
       <x>50</x>
       <y>20</y>
       <width>541</width>
-      <height>471</height>
+      <height>331</height>
      </rect>
     </property>
    </widget>
@@ -112,6 +112,31 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>360</y>
+      <width>541</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="rowCount">
+     <number>5</number>
+    </property>
+    <property name="columnCount">
+     <number>1</number>
+    </property>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <column/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

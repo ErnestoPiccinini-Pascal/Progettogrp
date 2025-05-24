@@ -41,7 +41,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Carica_clicked()
 {
-    qDebug() << QDir::currentPath();
+   // qDebug() << QDir::currentPath();
     QFile file("../../corsi_studenti.csv");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Errore", "Impossibile aprire il file");
@@ -49,8 +49,15 @@ void MainWindow::on_Carica_clicked()
     }
 
     QTextStream in(&file);
-    QString fileContent = in.readAll();
-    ui->listWidget->addItem(fileContent);
+    QString labels = in.readLine();
+    ui->listWidget->addItem(labels);
+    while(!in.atEnd()){
+
+        QString riga=in.readLine();
+        ui->tableWidget->setItem(0,0,new QTableWidgetItem(riga)) ;
+        ui->listWidget->addItem(riga);
+        QStringList rigapezzi=riga.split(',');
+    }
     file.close();
 
     //QMessageBox::information(this, "Contenuto del file", fileContent);
