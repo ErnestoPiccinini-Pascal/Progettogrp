@@ -113,30 +113,28 @@
      </item>
     </layout>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>360</y>
+      <y>370</y>
       <width>541</width>
-      <height>192</height>
+      <height>24</height>
      </rect>
     </property>
-    <property name="sortingEnabled">
-     <bool>true</bool>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>350</y>
+      <width>541</width>
+      <height>16</height>
+     </rect>
     </property>
-    <property name="rowCount">
-     <number>5</number>
+    <property name="text">
+     <string>Messaggio insermento</string>
     </property>
-    <property name="columnCount">
-     <number>1</number>
-    </property>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <row/>
-    <column/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -145,7 +143,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
