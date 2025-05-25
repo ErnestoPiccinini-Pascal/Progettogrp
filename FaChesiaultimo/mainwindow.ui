@@ -133,7 +133,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Messaggio insermento</string>
+     <string>Inserisci dati nuovo studente (prima di cliccare il pulsante)</string>
     </property>
    </widget>
   </widget>

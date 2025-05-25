@@ -12,7 +12,8 @@
 #include <QDir>
 #include <Structs.h>
 #include <QSet>
-
+#include <QFileDialog>
+#include <QInputDialog>
 
 //0
 QString labels;
@@ -64,7 +65,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_Carica_clicked()
 {
     qDebug() << QDir::currentPath();
-    QFile file("../../corsi_studenti.csv");
+    QString path=QFileDialog::getOpenFileName(this, "Apri file");
+    QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Errore", "Impossibile aprire il file");
         return;
@@ -98,27 +100,49 @@ void MainWindow::on_Carica_clicked()
 
 void MainWindow::on_CorsixMat_clicked()
 {
+    QString Cod=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci codice matricola",             // titolo finestra
+        "Inserire codice matricola",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
     ui->listWidget->clear();
-    ui->label->setText("inserisci Il codice matricola");
-    QString Cod=ui->lineEdit->text();
+    //ui->label->setText("inserisci Il codice matricola");
     ui->listWidget->addItem(CorsixMatricola[Cod]);
 }
 
 
 void MainWindow::on_CorsixCog_clicked()
 {
+    QString Cod=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci cognome",             // titolo finestra
+        "Qual è il cognome da ricercare?",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
     ui->listWidget->clear();
-    ui->label->setText("inserisci Il Cogn");
-    QString Cod=ui->lineEdit->text();
+   // ui->label->setText("inserisci Il Cogn");
     ui->listWidget->addItem(CorsixCog[Cod]);
 }
 
 
 void MainWindow::on_studentiacorso_clicked()
 {
+    QString Cod=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci codice corso",             // titolo finestra
+        "Inserire codice corso",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
     ui->listWidget->clear();
-    ui->label->setText("inserisci Il Codice del corso");
-    QString Cod=ui->lineEdit->text();
+   // ui->label->setText("inserisci Il Codice del corso");
+   // QString Cod=ui->lineEdit->text();
     for( QString x: StudentixCorso[Cod]){
         ui->listWidget->addItem(x);
     }
@@ -127,9 +151,17 @@ void MainWindow::on_studentiacorso_clicked()
 
 void MainWindow::on_excorso_clicked()
 {
+    QString Codi=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci codice corso",             // titolo finestra
+        "Inserire codice corso",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
     ui->listWidget->clear();
-    ui->label->setText("inserisci Il Codice del corso");
-    QString Codi=ui->lineEdit->text();
+  //  ui->label->setText("inserisci Il Codice del corso");
+   // QString Codi=ui->lineEdit->text();
     for( auto x: DatiesamexCorso[Codi]){
         QString outp;
         outp="Codice Esame : " + x.Cod + " Descrizione Esame : " + x.Desc;
@@ -166,11 +198,19 @@ void MainWindow::on_Nmatcorso_clicked()
 
 void MainWindow::on_Matxdesc_clicked()
 {
+    QString Cod=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci parola chiave",             // titolo finestra
+        "Inserire stringa da cercare",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
     ui->listWidget->clear();
-    ui->label->setText("inserisci la string da cercare");
-    QString Cod=ui->lineEdit->text();
+   // ui->label->setText("inserisci la string da cercare");
+   // QString Cod=ui->lineEdit->text();
     for(auto x:tutto){
-        if(x.DescMat.contains(Cod)){
+        if(x.DescMat.toUpper().contains(Cod.toUpper())){
             QString outp=x.strun();
             ui->listWidget->addItem(outp);
         }
@@ -181,7 +221,7 @@ void MainWindow::on_Matxdesc_clicked()
 void MainWindow::on_newstu_clicked()
 {
     ui->listWidget->clear();
-    ui->label->setText("inserisci i dati del nuovo studente come da documento ");
+    //ui->label->setText("inserisci i dati del nuovo studente come da documento ");
     QString riga=ui->lineEdit->text();
     QStringList rigapezzi=riga.split(',');
     rigav nuovariga;
