@@ -113,29 +113,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>370</y>
-      <width>541</width>
-      <height>24</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>350</y>
-      <width>541</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Inserisci dati nuovo studente (prima di cliccare il pulsante)</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
