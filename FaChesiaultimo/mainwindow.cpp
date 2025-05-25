@@ -16,6 +16,8 @@
 #include <QInputDialog>
 
 //0
+QMap<QString,QString> MatCodMat;
+QMap<QString,QString> CodCorsoxCodMat;
 QString labels;
 QVector<rigav> tutto;
 QSet<QString> CodiciCorsi;
@@ -91,6 +93,8 @@ void MainWindow::on_Carica_clicked()
         DatiesamexCorso[nuovariga.CodCorso].insert(matpls);
          CodiciCorsi.insert(nuovariga.CodCorso);
         CorsiCodCorso[nuovariga.CodCorso]=nuovariga.DesCorso;
+         CodCorsoxCodMat[nuovariga.CodMat]=nuovariga.CodCorso;
+        MatCodMat[nuovariga.CodMat]=nuovariga.CodMat;
     }
     file.close();
     //hjsdjhfcbjh
@@ -220,12 +224,50 @@ void MainWindow::on_Matxdesc_clicked()
 
 void MainWindow::on_newstu_clicked()
 {
+
+    rigav nuovariga;
+    nuovariga.CodMat=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci Codice di una Materia",             // titolo finestra
+        "Inserire Codice Materia",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
+    if(!CodCorsoxCodMat.contains(nuovariga.CodMat)){
+        QMessageBox::warning(this, "Errore", "non esiste la materia");
+        return;
+    }
+    nuovariga.MatStu=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci Codice matricola",             // titolo finestra
+        "Inserire codice matricola",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
+    nuovariga.NomStu=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci nome",             // titolo finestra
+        "Inserire nome",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
+    nuovariga.CogStu=QInputDialog::getText(
+        this,                          // parent
+        "Inserisci Cognome",             // titolo finestra
+        "Inserire Cognome",        // testo nel box
+        QLineEdit::Normal,            // modalità inserimento (normale o password)
+        ""                         // testo di default
+        // indica se l’utente ha premuto OK o Annulla
+        );
     ui->listWidget->clear();
     //ui->label->setText("inserisci i dati del nuovo studente come da documento ");
     QString riga=ui->lineEdit->text();
-    QStringList rigapezzi=riga.split(',');
-    rigav nuovariga;
-    nuovariga={rigapezzi[0],rigapezzi[1],rigapezzi[2],rigapezzi[3],rigapezzi[4],rigapezzi[5],rigapezzi[6]};
+    nuovariga.CodCorso=CodCorsoxCodMat[nuovariga.CodMat];
+    nuovariga.DesCorso=CorsiCodCorso[nuovariga.CodCorso];
+    nuovariga.DescMat=MatCodMat[nuovariga.CodMat];
     tutto.push_back(nuovariga);
     CorsixMatricola[nuovariga.MatStu]=nuovariga.DesCorso;
     CorsixCog[nuovariga.CogStu]=nuovariga.DesCorso;
@@ -239,7 +281,7 @@ void MainWindow::on_newstu_clicked()
 
 void MainWindow::on_Salvadat_clicked()
 {
-    QFile file("output.txt");  // crea un file nella cartella del progetto
+    QFile file("output.csv");  // crea un file nella cartella del progetto
 
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
