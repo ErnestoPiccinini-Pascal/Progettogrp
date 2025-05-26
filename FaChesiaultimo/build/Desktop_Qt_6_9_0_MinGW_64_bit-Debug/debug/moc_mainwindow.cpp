@@ -40,12 +40,42 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
         "on_Carica_clicked",
-        ""
+        "",
+        "on_CorsixMat_clicked",
+        "on_CorsixCog_clicked",
+        "on_studentiacorso_clicked",
+        "on_excorso_clicked",
+        "on_Nstudcorso_clicked",
+        "on_Nmatcorso_clicked",
+        "on_Matxdesc_clicked",
+        "on_newstu_clicked",
+        "on_Salvadat_clicked",
+        "on_esci_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'on_Carica_clicked'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_CorsixMat_clicked'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_CorsixCog_clicked'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_studentiacorso_clicked'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_excorso_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_Nstudcorso_clicked'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_Nmatcorso_clicked'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_Matxdesc_clicked'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_newstu_clicked'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_Salvadat_clicked'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_esci_clicked'
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -70,6 +100,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->on_Carica_clicked(); break;
+        case 1: _t->on_CorsixMat_clicked(); break;
+        case 2: _t->on_CorsixCog_clicked(); break;
+        case 3: _t->on_studentiacorso_clicked(); break;
+        case 4: _t->on_excorso_clicked(); break;
+        case 5: _t->on_Nstudcorso_clicked(); break;
+        case 6: _t->on_Nmatcorso_clicked(); break;
+        case 7: _t->on_Matxdesc_clicked(); break;
+        case 8: _t->on_newstu_clicked(); break;
+        case 9: _t->on_Salvadat_clicked(); break;
+        case 10: _t->on_esci_clicked(); break;
         default: ;
         }
     }
@@ -95,14 +135,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 11;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 11;
     }
     return _id;
 }

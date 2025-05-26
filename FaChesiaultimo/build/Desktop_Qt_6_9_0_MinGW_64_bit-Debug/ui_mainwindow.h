@@ -11,13 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -41,7 +39,6 @@ public:
     QPushButton *newstu;
     QPushButton *Salvadat;
     QPushButton *esci;
-    QTableWidget *tableWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -116,20 +113,10 @@ public:
 
         verticalLayout->addWidget(esci);
 
-        tableWidget = new QTableWidget(centralwidget);
-        if (tableWidget->columnCount() < 1)
-            tableWidget->setColumnCount(1);
-        if (tableWidget->rowCount() < 5)
-            tableWidget->setRowCount(5);
-        tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(50, 360, 541, 192));
-        tableWidget->setSortingEnabled(true);
-        tableWidget->setRowCount(5);
-        tableWidget->setColumnCount(1);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

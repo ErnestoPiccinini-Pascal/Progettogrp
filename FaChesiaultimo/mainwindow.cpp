@@ -264,7 +264,7 @@ void MainWindow::on_newstu_clicked()
         );
     ui->listWidget->clear();
     //ui->label->setText("inserisci i dati del nuovo studente come da documento ");
-    QString riga=ui->lineEdit->text();
+   // QString riga=ui->lineEdit->text();
     nuovariga.CodCorso=CodCorsoxCodMat[nuovariga.CodMat];
     nuovariga.DesCorso=CorsiCodCorso[nuovariga.CodCorso];
     nuovariga.DescMat=MatCodMat[nuovariga.CodMat];
